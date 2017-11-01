@@ -1,0 +1,1012 @@
+﻿<!DOCTYPE html>
+
+<html >
+<head>
+   
+    <title>Battleship</title>
+    
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            background-color: lightblue;
+        }
+
+        table{
+            width: 100%;
+            height: 40%;
+
+        }
+
+        h1{
+            text-align: center;
+        }
+          
+    </style>
+   
+</head>
+<body>
+    <h1>Opponent's board</h1>
+    <div id=" divv">
+        <table id="table_top">
+            <tr><td><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th>
+            <tr><th>1</th><td id="A1a" onclick="fire(this.id)"><td id="B1a" onclick="fire(this.id)"><td id="C1a" onclick="fire(this.id)"><td id="D1a" onclick="fire(this.id)"><td id="E1a" onclick="fire(this.id)"><td id="F1a" onclick="fire(this.id)"><td id="G1a" onclick="fire(this.id)"><td id="H1a" onclick="fire(this.id)"><td id="I1a" onclick="fire(this.id)"><td id="J1a" onclick="fire(this.id)">
+            <tr><th>2</th><td id="A2a" onclick="fire(this.id)"><td id="B2a" onclick="fire(this.id)"><td id="C2a" onclick="fire(this.id)"><td id="D2a" onclick="fire(this.id)"><td id="E2a" onclick="fire(this.id)"><td id="F2a" onclick="fire(this.id)"><td id="G2a" onclick="fire(this.id)"><td id="H2a" onclick="fire(this.id)"><td id="I2a" onclick="fire(this.id)"><td id="J2a" onclick="fire(this.id)">
+            <tr><th>3</th><td id="A3a" onclick="fire(this.id)"><td id="B3a" onclick="fire(this.id)"><td id="C3a" onclick="fire(this.id)"><td id="D3a" onclick="fire(this.id)"><td id="E3a" onclick="fire(this.id)"><td id="F3a" onclick="fire(this.id)"><td id="G3a" onclick="fire(this.id)"><td id="H3a" onclick="fire(this.id)"><td id="I3a" onclick="fire(this.id)"><td id="J3a" onclick="fire(this.id)">
+            <tr><th>4</th><td id="A4a" onclick="fire(this.id)"><td id="B4a" onclick="fire(this.id)"><td id="C4a" onclick="fire(this.id)"><td id="D4a" onclick="fire(this.id)"><td id="E4a" onclick="fire(this.id)"><td id="F4a" onclick="fire(this.id)"><td id="G4a" onclick="fire(this.id)"><td id="H4a" onclick="fire(this.id)"><td id="I4a" onclick="fire(this.id)"><td id="J4a" onclick="fire(this.id)">
+            <tr><th>5</th><td id="A5a" onclick="fire(this.id)"><td id="B5a" onclick="fire(this.id)"><td id="C5a" onclick="fire(this.id)"><td id="D5a" onclick="fire(this.id)"><td id="E5a" onclick="fire(this.id)"><td id="F5a" onclick="fire(this.id)"><td id="G5a" onclick="fire(this.id)"><td id="H5a" onclick="fire(this.id)"><td id="I5a" onclick="fire(this.id)"><td id="J5a" onclick="fire(this.id)">
+            <tr><th>6</th><td id="A6a" onclick="fire(this.id)"><td id="B6a" onclick="fire(this.id)"><td id="C6a" onclick="fire(this.id)"><td id="D6a" onclick="fire(this.id)"><td id="E6a" onclick="fire(this.id)"><td id="F6a" onclick="fire(this.id)"><td id="G6a" onclick="fire(this.id)"><td id="H6a" onclick="fire(this.id)"><td id="I6a" onclick="fire(this.id)"><td id="J6a" onclick="fire(this.id)">
+            <tr><th>7</th><td id="A7a" onclick="fire(this.id)"><td id="B7a" onclick="fire(this.id)"><td id="C7a" onclick="fire(this.id)"><td id="D7a" onclick="fire(this.id)"><td id="E7a" onclick="fire(this.id)"><td id="F7a" onclick="fire(this.id)"><td id="G7a" onclick="fire(this.id)"><td id="H7a" onclick="fire(this.id)"><td id="I7a" onclick="fire(this.id)"><td id="J7a" onclick="fire(this.id)">
+            <tr><th>8</th><td id="A8a" onclick="fire(this.id)"><td id="B8a" onclick="fire(this.id)"><td id="C8a" onclick="fire(this.id)"><td id="D8a" onclick="fire(this.id)"><td id="E8a" onclick="fire(this.id)"><td id="F8a" onclick="fire(this.id)"><td id="G8a" onclick="fire(this.id)"><td id="H8a" onclick="fire(this.id)"><td id="I8a" onclick="fire(this.id)"><td id="J8a" onclick="fire(this.id)">
+            <tr><th>9</th><td id="A9a" onclick="fire(this.id)"><td id="B9a" onclick="fire(this.id)"><td id="C9a" onclick="fire(this.id)"><td id="D9a" onclick="fire(this.id)"><td id="E9a" onclick="fire(this.id)"><td id="F9a" onclick="fire(this.id)"><td id="G9a" onclick="fire(this.id)"><td id="H9a" onclick="fire(this.id)"><td id="I9a" onclick="fire(this.id)"><td id="J9a" onclick="fire(this.id)">
+            <tr><th>10</th><td id="A10a" onclick="fire(this.id)"><td id="B10a" onclick="fire(this.id)"><td id="C10a" onclick="fire(this.id)"><td id="D10a" onclick="fire(this.id)"><td id="E10a" onclick="fire(this.id)"><td id="F10a" onclick="fire(this.id)"><td id="G10a" onclick="fire(this.id)"><td id="H10a" onclick="fire(this.id)"><td id="I10a" onclick="fire(this.id)"><td id="J10a" onclick="fire(this.id)">
+       </table>
+
+        <h1>Your board</h1>
+
+        <table id ="table_bottom" >
+            <tr><td><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th>
+            <tr><th>1</th><td id="A1b"><td id="B1b"><td id="C1b"><td id="D1b"><td id="E1b"><td id="F1b"><td id="G1b"><td id="H1b"><td id="I1b"><td id="J1b">
+            <tr><th>2</th><td id="A2b"><td id="B2b"><td id="C2b"><td id="D2b"><td id="E2b"><td id="F2b"><td id="G2b"><td id="H2b"><td id="I2b"><td id="J2b">
+            <tr><th>3</th><td id="A3b"><td id="B3b"><td id="C3b"><td id="D3b"><td id="E3b"><td id="F3b"><td id="G3b"><td id="H3b"><td id="I3b"><td id="J3b">
+            <tr><th>4</th><td id="A4b"><td id="B4b"><td id="C4b"><td id="D4b"><td id="E4b"><td id="F4b"><td id="G4b"><td id="H4b"><td id="I4b"><td id="J4b">
+            <tr><th>5</th><td id="A5b"><td id="B5b"><td id="C5b"><td id="D5b"><td id="E5b"><td id="F5b"><td id="G5b"><td id="H5b"><td id="I5b"><td id="J5b">
+            <tr><th>6</th><td id="A6b"><td id="B6b"><td id="C6b"><td id="D6b"><td id="E6b"><td id="F6b"><td id="G6b"><td id="H6b"><td id="I6b"><td id="J6b">
+            <tr><th>7</th><td id="A7b"><td id="B7b"><td id="C7b"><td id="D7b"><td id="E7b"><td id="F7b"><td id="G7b"><td id="H7b"><td id="I7b"><td id="J7b">
+            <tr><th>8</th><td id="A8b"><td id="B8b"><td id="C8b"><td id="D8b"><td id="E8b"><td id="F8b"><td id="G8b"><td id="H8b"><td id="I8b"><td id="J8b">
+            <tr><th>9</th><td id="A9b"><td id="B9b"><td id="C9b"><td id="D9b"><td id="E9b"><td id="F9b"><td id="G9b"><td id="H9b"><td id="I9b"><td id="J9b">
+            <tr><th>10</th><td id="A10b"><td id="B10b"><td id="C10b"><td id="D10b"><td id="E10b"><td id="F10b"><td id="G10b"><td id="H10b"><td id="I10b"><td id="J10b">
+        </table>
+     </div>
+
+    <script type="text/javascript">
+        var buttonPressed = false;
+        var turn = 1;
+        var player_one_hits = [];
+        var player_one_misses = [];
+        var player_two_hits = [];
+        var player_two_misses = [];
+        var airHealth = 5;
+        var battlehealth = 4;
+        var subHealth = 3;
+        
+        sessionStorage.setItem("player_one_hits", player_one_hits);
+        sessionStorage.setItem("player_one_misses", player_one_misses);
+        sessionStorage.setItem("player_two_hits", player_two_hits);
+        sessionStorage.setItem("player_two_misses", player_two_misses);
+
+        sessionStorage.setItem("aircraft_one_health", airHealth);
+        sessionStorage.setItem("aircraft_two_health", airHealth);
+        sessionStorage.setItem("battle_one_health", battlehealth);
+        sessionStorage.setItem("battle_two_health", battlehealth);
+        sessionStorage.setItem("sub_one_health", subHealth);
+        sessionStorage.setItem("sub_two_health", subHealth);
+        window.onload = start();
+
+        
+        playGame();
+
+
+
+        function start() {
+
+            
+            if (typeof (Storage) !== "undefined") {
+                var response = prompt("What is your name?");
+
+
+
+
+               
+
+                window.sessionStorage.setItem("player_one", response);
+
+
+
+           
+                response = prompt("Where do you want to place your ships?");
+                var ships = response.split(";");
+                var ship_one = ships[0].split("");
+                var ship_two = ships[1].split("");
+                var ship_three = ships[2].split("");
+
+                var aircraft_one; var battleship_one; var sub_one;
+
+                switch (ship_one[0]) {
+                    case "A": aircraft_one = ship_one;
+                        break;
+                    case "B": battleship_one = ship_one;
+                        break;
+                    case "S": sub_one = ship_one;
+                        break;
+                }
+
+                switch (ship_two[0]) {
+                    case "A": aircraft_one = ship_two;
+                        break;
+                    case "B": battleship_one = ship_two;
+                        break;
+                    case "S": sub_one = ship_two;
+                        break;
+                }
+
+                switch (ship_three[0]) {
+                    case "A": aircraft_one = ship_three;
+                        break;
+                    case "B": battleship_one = ship_three;
+                        break;
+                    case "S": sub_one = ship_three;
+                        break;
+                }
+                
+                
+
+               
+                response = prompt("What is your name?");
+                sessionStorage.setItem("player_two", response);
+
+                
+                response = prompt("Where do you want to place your ships?");
+
+                ships = response.split(";");
+                ship_one = ships[0].split("");
+                ship_two = ships[1].split("");
+                ship_three = ships[2].split("");
+
+                var aircraft_two; var battleship_two; var sub_two;
+
+                switch (ship_one[0]) {
+                    case "A": aircraft_two = ship_one;
+                        break;
+                    case "B": battleship_two = ship_one;
+                        break;
+                    case "S": sub_two = ship_one;
+                        break;
+                }
+
+                switch (ship_two[0]) {
+                    case "A": aircraft_two = ship_two;
+                        break;
+                    case "B": battleship_two = ship_two;
+                        break;
+                    case "S": sub_two = ship_two;
+                        break;
+                }
+
+                switch (ship_three[0]) {
+                    case "A": aircraft_two = ship_three;
+                        break;
+                    case "B": battleship_two = ship_three;
+                        break;
+                    case "S": sub_two = ship_three;
+                        break;
+                }
+
+                var end; var beginning; var spaces = []; var nextSpace; var num; var i; 
+                var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
+
+              
+
+                
+                if (aircraft_one[2] == aircraft_one[5]) {
+
+                    end = aircraft_one[6];
+                    beginning = aircraft_one[3];
+                    spaces.push(aircraft_one[2].concat(beginning));
+                    num = Number(beginning);
+
+
+                    for ( i = 0; i < 4; i++) {
+                        num = num + 1;
+                      
+                      spaces.push(aircraft_one[2].concat(num.toString()));
+                    }
+
+                    sessionStorage.setItem("aircraft_one", spaces);
+
+                    for (i = 0; i < 5; i++) {
+                        spaces.pop();
+                    }
+
+
+                } else {
+                    i = 0;
+                    while (aircraft_one[2] != letters[i]) {
+                        i++;
+                    }
+                    var j;
+                    for (j = i; j < i + 5; j++) {
+                        spaces.push(letters[j].concat(aircraft_one[3]));
+                    }
+                    sessionStorage.setItem("aircraft_one", spaces);
+
+                    for (i = 0; i < 5; i++) {
+                        spaces.pop();
+                    }
+                }
+
+                if (aircraft_two[2] == aircraft_two[5]) {
+
+                    end = aircraft_two[6];
+                    beginning = aircraft_two[3];
+                    spaces.push(aircraft_two[2].concat(beginning));
+                    num = Number(beginning);
+
+
+                    for ( i = 0; i < 4; i++) {
+                        num = num + 1;
+
+                        spaces.push(aircraft_two[2].concat(num.toString()));
+                    }
+
+                    sessionStorage.setItem("aircraft_two", spaces);
+           
+                    for (i = 0; i < 5; i++) {
+                        spaces.pop();
+                    }
+
+
+                } else {
+                    i = 0;
+                    while (aircraft_two[2] != letters[i]) {
+                        i++;
+                    }
+                    var j;
+                    for (j = i; j < i + 5; j++) {
+                        spaces.push(letters[j].concat(aircraft_two[3]));
+                    }
+                    sessionStorage.setItem("aircraft_two", spaces);
+
+                    for (i = 0; i < 5; i++) {
+                        spaces.pop();
+                    }
+                }
+
+                if (sub_one[2] == sub_one[5]) {
+
+                    end = sub_one[6];
+                    beginning = sub_one[3];
+                    spaces.push(sub_one[2].concat(beginning));
+                    num = Number(beginning);
+
+
+                    for ( i = 0; i < 2; i++) {
+                        num = num + 1;
+
+                        spaces.push(sub_one[2].concat(num.toString()));
+                    }
+
+                    sessionStorage.setItem("sub_one", spaces);
+
+                    for (i = 0; i < 3; i++) {
+                        spaces.pop();
+                    }
+
+
+                } else {
+                    i = 0;
+                    while (sub_one[2] != letters[i]) {
+                        i++;
+                    }
+                    var j;
+                    for (j = i; j < i + 3; j++) {
+                        spaces.push(letters[j].concat(sub_one[3]));
+                    }
+                    sessionStorage.setItem("sub_one", spaces);
+
+                    for (i = 0; i < 3; i++) {
+                        spaces.pop();
+                    }
+
+                }
+
+
+                if (sub_two[2] == sub_two[5]) {
+
+                    end = sub_two[6];
+                    beginning = sub_two[3];
+                    spaces.push(sub_two[2].concat(beginning));
+                    num = Number(beginning);
+
+
+                    for ( i = 0; i < 2; i++) {
+                        num = num + 1;
+
+                        newLength = spaces.push(sub_two[2].concat(num.toString()));
+                    }
+
+                    sessionStorage.setItem("sub_two", spaces);
+
+             
+
+                    for (i = 0; i < 3; i++) {
+                        spaces.pop();
+                    }
+
+                } else {
+                    i = 0;
+                    while (sub_two[2] != letters[i]) {
+                        i++;
+                    }
+                    var j;
+                    for (j = i; j < i + 3; j++) {
+                        spaces.push(letters[j].concat(sub_two[3]));
+                    }
+                    sessionStorage.setItem("sub_two", spaces);
+
+                    for (i = 0; i < 3; i++) {
+                        spaces.pop();
+                    }
+                }
+
+           
+
+                if (battleship_one[2] == battleship_one[5]) {
+                    beginning = battleship_one[3];
+                    end = battleship_one[6];
+                    spaces.push(battleship_one[2].concat(beginning));
+                    num = Number(beginning);
+
+
+                    for ( i = 0; i < 3; i++) {
+                        num = num + 1;
+
+                        newLength = spaces.push(battleship_one[2].concat(num.toString()));
+                    }
+
+                    sessionStorage.setItem("battleship_one", spaces);
+           
+
+                    for (i = 0; i < 4; i++) {
+                        spaces.pop();
+                    }
+
+                } else {
+                    i = 0;
+                    while (battleship_one[2] != letters[i]) {
+                        i++;
+                    }
+                    var j;
+                    for (j = i; j < i + 4; j++) {
+                        spaces.push(letters[j].concat(battleship_one[3]));
+                    }
+                    sessionStorage.setItem("battleship_one", spaces);
+
+                    for (i = 0; i < 4; i++) {
+                        spaces.pop();
+                    }
+                }
+
+                if (battleship_two[2] == battleship_two[5]) {
+
+                    end = battleship_two[6];
+                    beginning = battleship_two[3];
+                    spaces.push(battleship_two[2].concat(beginning));
+                    num = Number(beginning);
+
+
+                    for ( i = 0; i < 3; i++) {
+                        num = num + 1;
+             
+                        newLength = spaces.push(battleship_two[2].concat(num.toString()));
+                    }
+
+                    sessionStorage.setItem("battleship_two", spaces);
+
+                    for (i = 0; i < 4; i++) {
+                        spaces.pop();
+                    }
+           
+
+                } else {
+                    i = 0;
+                    while (battleship_two[2] != letters[i]) {
+                        i++;
+                    }
+                    var j;
+                    for (j = i; j < i + 4; j++) {
+                        spaces.push(letters[j].concat(battleship_two[3]));
+                    }
+                    sessionStorage.setItem("battleship_two", spaces);
+
+                    for (i = 0; i < 4; i++) {
+                        spaces.pop();
+                    }
+                }
+
+                
+               
+               
+             }
+
+
+        }
+
+        function fire(id) {
+
+            var space = id[0].concat(id[1]);
+            
+            var aircraft; var battleship; var sub; var i;
+            var hit = false;
+            var hits = []; var misses = [];
+            var player_two_score = sessionStorage.getItem("player_two_score");
+            var player_one_score = sessionStorage.getItem("player_one_score");
+            var ship_health;
+            var sink = false;
+            buttonPressed = true;
+        
+            if (turn == 1) {
+                
+                aircraft = sessionStorage.getItem("aircraft_two").split(",");
+                battleship = sessionStorage.getItem("battleship_two").split(",");
+                sub = sessionStorage.getItem("sub_two").split(",");
+                
+
+                for (i = 0; i < aircraft.length; i++) {
+                    if (aircraft[i] == space) {
+                        hit = true;
+                        ship_health = sessionStorage.getItem("aircraft_two_health");
+                        ship_health = ship_health - 1;
+
+                        if (ship_health == 0) {
+                            alert("It's a hit! You sunk their aircraft carrier!");
+                            sink = true;
+                        }
+
+                        sessionStorage.setItem("aircraft_two_health", ship_health);
+
+                    }
+                }
+
+              
+
+                for (i = 0; i < battleship.length; i++) {
+                    if (battleship[i] == space) {
+                        hit = true;
+                        ship_health = sessionStorage.getItem("battle_two_health");
+                        ship_health = ship_health - 1;
+
+                        if (ship_health == 0) {
+                            alert("It's a hit! You sunk their Battleship!");
+                            sink = true;
+                        }
+
+                        sessionStorage.setItem("battle_two_health", ship_health);
+                    }
+                }
+
+                for (i = 0; i < sub.length; i++) {
+                    if (sub[i] == space) {
+                        hit = true;
+                        ship_health = sessionStorage.getItem("sub_two_health");
+                        ship_health = ship_health - 1;
+
+                        if (ship_health == 0) {
+                            alert("It's a hit! You sunk their Submarine!");
+                            sink = true;
+                        }
+
+                        sessionStorage.setItem("sub_two_health", ship_health);
+                    }
+                }
+               
+                if (hit) {
+                    
+                    document.getElementById(id).style.backgroundColor = "red";
+                    player_two_score = player_two_score - 2;
+                    sessionStorage.setItem("player_two_score", player_two_score);
+                    hits = sessionStorage.getItem("player_one_hits").split(",");
+
+                    if (hits.length == 0) {
+                        hits = [id];
+                    } else {
+                        hits.push(id);
+                    }
+                    sessionStorage.setItem("player_one_hits", hits);
+
+                    if (!sink) {
+                        alert("It's a hit!");
+                    }
+
+                    
+                } else {
+                    document.getElementById(id).style.backgroundColor = "white";
+                    
+                    misses = sessionStorage.getItem("player_one_misses").split(",");
+
+                    if (misses.length == 0) {
+                        misses = [id];
+                    } else {
+                        misses.push(id);
+                    }
+                    sessionStorage.setItem("player_one_misses", misses);
+
+                    alert("It's a miss!");
+                 
+                }
+
+                
+
+            } else {
+
+                aircraft = sessionStorage.getItem("aircraft_one").split(",");
+                battleship = sessionStorage.getItem("battleship_one").split(",");
+                sub = sessionStorage.getItem("sub_one").split(",");
+
+                for (i = 0; i < aircraft.length; i++) {
+                    if (aircraft[i] == space) {
+                        hit = true;
+                        ship_health = sessionStorage.getItem("aircraft_one_health");
+                        ship_health = ship_health - 1;
+
+                        if (ship_health == 0) {
+                            alert("It's a hit! You sunk their aircraft carrier!");
+                            sink = true;
+                        }
+
+                        sessionStorage.setItem("aircraft_one_health", ship_health);
+
+                    }
+                }
+
+                for (i = 0; i < battleship.length; i++) {
+                    if (battleship[i] == space) {
+                        hit = true;
+                        ship_health = sessionStorage.getItem("battle_one_health");
+                        ship_health = ship_health - 1;
+
+                        if (ship_health == 0) {
+                            alert("It's a hit! You sunk their Battleship!");
+                            sink = true;
+                        }
+
+                        sessionStorage.setItem("battle_one_health", ship_health);
+                    }
+                }
+
+                for (i = 0; i < sub.length; i++) {
+                    if (sub[i] == space) {
+                        hit = true;
+                        ship_health = sessionStorage.getItem("sub_one_health");
+                        ship_health = ship_health - 1;
+
+                        if (ship_health == 0) {
+                            alert("It's a hit! You sunk their Submarine!");
+                            sink = true;
+                        }
+
+                        sessionStorage.setItem("sub_one_health", ship_health);
+                    }
+                }
+
+                if (hit) {
+                    document.getElementById(id).style.backgroundColor = "red";
+                    player_one_score = player_one_score - 2;
+                    sessionStorage.setItem("player_one_score", player_one_score);
+                    hits = sessionStorage.getItem("player_two_hits").split(",");
+
+                    if (hits.length == 0) {
+                        hits = [id];
+                    } else {
+                        hits.push(id);
+                    }
+                    sessionStorage.setItem("player_two_hits", hits);
+
+                    if (!sink) {
+                        alert("It's a hit!");
+                    }
+
+
+                } else {
+                    document.getElementById(id).style.backgroundColor = "white";
+
+                    misses = sessionStorage.getItem("player_two_misses").split(",");
+
+                    if (misses.length == 0) {
+                        misses = [id];
+                    } else {
+                        misses.push(id);
+                    }
+                    sessionStorage.setItem("player_two_misses", misses);
+
+                    alert("It's a miss!");
+                }
+            }
+
+     
+            if (player_two_score == 0) {
+                gameOver(1);
+            } else if (player_one_score == 0) {
+
+                gameOver(2);
+
+            } else {
+                if (turn == 1) {
+              
+                    clearPlayerOneBoard();
+                 
+                    clearUpperBoard();
+                 
+                    playerTwoTurn();
+                } else if (turn == 2) {
+                    clearPlayerTwoBoard();
+                    clearUpperBoard();
+                    playerOneTurn();
+                }
+            }
+
+
+            
+            
+          
+        }
+
+
+        function playGame() {
+           
+            var player_one_score = 24;
+            var player_two_score = 24;
+            sessionStorage.setItem("player_one_score", player_one_score);
+            sessionStorage.setItem("player_two_score", player_two_score);
+
+            
+
+
+            playerOneTurn();
+        }
+
+        function playerOneTurn() {
+
+            buttonPressed = false;
+            var name = sessionStorage.getItem("player_one");
+            alert("Click OK to begin " + name + "'s turn");
+
+            var player_one_air = sessionStorage.getItem("aircraft_one").split(",");
+            var player_one_battle = sessionStorage.getItem("battleship_one").split(",");
+            var player_one_sub = sessionStorage.getItem("sub_one").split(",");
+            var hits = sessionStorage.getItem("player_one_hits").split(",");
+            var misses = sessionStorage.getItem("player_one_misses").split(",");
+            
+            
+            var i;
+            try {
+                hits.shift();
+                
+                for (i = 0; i < hits.length; i++) {
+                    
+                        document.getElementById(hits[i]).style.backgroundColor = "red";
+                    
+                }
+            } catch (err) {
+                
+            }
+
+            try{
+                misses.shift();
+                for (i = 0; i < misses.length; i++) {
+                    document.getElementById(misses[i]).style.backgroundColor = "white";
+                }
+            } catch(err){}
+
+            
+
+            turn = 1;
+
+            var air_space;
+            for (var i = 0; i < 5; i++) {
+                air_space = player_one_air[i];
+                
+                
+                air_space = air_space.concat("b");
+               
+                document.getElementById(air_space).innerHTML = "A";
+            }
+
+            var battle_space;
+            for (var i = 0; i < 4; i++) {
+                battle_space = player_one_battle[i];
+               
+                
+                battle_space= battle_space.concat("b");
+          
+                document.getElementById(battle_space).innerHTML = "B";
+            }
+
+            var sub_space;
+            for (var i = 0; i < 3; i++) {
+                sub_space = player_one_sub[i];
+        
+                             
+                sub_space= sub_space.concat("b");
+                
+                document.getElementById(sub_space).innerHTML = "S";
+            }
+
+            
+
+            
+        }
+
+        function playerTwoTurn() {
+         
+            turn = 2;
+            var name_two = sessionStorage.getItem("player_two");
+            alert("Click OK to begin " + name_two + "'s turn");
+
+            var player_two_air = sessionStorage.getItem("aircraft_two").split(",");
+            var player_two_battle = sessionStorage.getItem("battleship_two").split(",");
+            var player_two_sub = sessionStorage.getItem("sub_two").split(",");
+
+            var hits = sessionStorage.getItem("player_two_hits").split(",");
+            var misses = sessionStorage.getItem("player_two_misses").split(",");
+
+            var i;
+            try {
+                hits.shift();
+                for (i = 0; i < hits.length; i++) {
+                    document.getElementById(hits[i]).style.backgroundColor = "red";
+                }
+            }catch (err){}
+
+            try {
+                misses.shift();
+                for (i = 0; i < misses.length; i++) {
+                    document.getElementById(misses[i]).style.backgroundColor = "white";
+                }
+            }catch(err){}
+         
+
+
+            var air_space;
+            for (var i = 0; i < 5; i++) {
+                air_space = player_two_air[i];
+
+
+                air_space = air_space.concat("b");
+
+                document.getElementById(air_space).innerHTML = "A";
+            }
+
+            var battle_space;
+            for (var i = 0; i < 4; i++) {
+                battle_space = player_two_battle[i];
+
+
+                battle_space = battle_space.concat("b");
+
+                document.getElementById(battle_space).innerHTML = "B";
+            }
+
+            var sub_space;
+            for (var i = 0; i < 3; i++) {
+                sub_space = player_two_sub[i];
+
+
+                sub_space = sub_space.concat("b");
+
+                document.getElementById(sub_space).innerHTML = "S";
+            }
+
+       
+            
+           
+
+            
+
+
+        }
+
+        function clearPlayerOneBoard() {
+            var player_one_air = sessionStorage.getItem("aircraft_one").split(",");
+            var player_one_battle = sessionStorage.getItem("battleship_one").split(",");
+            var player_one_sub = sessionStorage.getItem("sub_one").split(",");
+
+            var hits = sessionStorage.getItem("player_one_hits").split(",");
+            var misses = sessionStorage.getItem("player_one_misses").split(",");
+
+            var i;
+
+            
+
+
+            var air_space;
+            for (var i = 0; i < 5; i++) {
+                air_space = player_one_air[i];
+
+
+                air_space = air_space.concat("b");
+
+                document.getElementById(air_space).innerHTML = "";
+            }
+
+            var battle_space;
+            for (var i = 0; i < 4; i++) {
+                battle_space = player_one_battle[i];
+
+
+                battle_space = battle_space.concat("b");
+
+                document.getElementById(battle_space).innerHTML = "";
+            }
+
+            var sub_space;
+            for (var i = 0; i < 3; i++) {
+                sub_space = player_one_sub[i];
+
+
+                sub_space = sub_space.concat("b");
+
+                document.getElementById(sub_space).innerHTML = "";
+            }
+        }
+
+        function clearPlayerTwoBoard() {
+            var player_two_air = sessionStorage.getItem("aircraft_two").split(",");
+            var player_two_battle = sessionStorage.getItem("battleship_two").split(",");
+            var player_two_sub = sessionStorage.getItem("sub_two").split(",");
+            var hits = sessionStorage.getItem("player_two_hits").split(",");
+            var misses = sessionStorage.getItem("player_two_misses").split(",");
+
+            var i;
+            
+
+
+            var air_space;
+            for (var i = 0; i < 5; i++) {
+                air_space = player_two_air[i];
+
+
+                air_space = air_space.concat("b");
+
+                document.getElementById(air_space).innerHTML = "";
+            }
+
+            var battle_space;
+            for (var i = 0; i < 4; i++) {
+                battle_space = player_two_battle[i];
+
+
+                battle_space = battle_space.concat("b");
+
+                document.getElementById(battle_space).innerHTML = "";
+            }
+
+            var sub_space;
+            for (var i = 0; i < 3; i++) {
+                sub_space = player_two_sub[i];
+
+
+                sub_space = sub_space.concat("b");
+
+                document.getElementById(sub_space).innerHTML = "";
+            }
+        }
+
+        function clearUpperBoard() {
+
+            var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
+            var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+
+            var str = "";
+          
+            for (j = 0; j < 10; j++) {
+
+                str = str.concat(letters[j]);
+             
+                for (i = 0; i < 10; i++) {
+                    str = str.concat(numbers[i]);
+                    str = str.concat("a");
+                    document.getElementById(str).style.backgroundColor = "lightblue";
+                    
+                    str = str.slice(0, 1);
+                   
+              
+                }
+
+                str = "";
+                
+
+            }
+        }
+
+        function gameOver(player) {
+
+            var winner; 
+            var score;
+            if (player == 1) {
+                winner = sessionStorage.getItem("player_one");
+                score = sessionStorage.getItem("player_one_score");
+            } else if (player ==2) {
+                winner = sessionStorage.getItem("player_two");
+                score = sessionStorage.getItem("player_two_score");
+            }
+
+            var str = "The winner is ";
+            str = str.concat(winner);
+            str = str.concat(" with a final score of ");
+            str = str.concat(score);
+            alert(str);
+
+            highScore(score, winner);
+        }
+
+        function highScore(score, player) {
+
+            try {
+                var scores = localStorage.getItem("high_scores").split(",");
+                var names = localStorage.getItem("high_score_names").split(",");
+                var high_scorers = Number(localStorage.getItem("high_scorers"));
+                
+
+                var stop = false;
+                var position;
+                if (high_scorers == 10) {
+                    var count = 0;
+                    for (var i = 0; i < 10; i++) {
+                        if (!stop && Number(scores[i]) <= Number(score)) {
+                            position = i;
+                            stop = true;
+                        }
+                        if (Number(scores[i]) == Number(score) && Number(score) == 24) {
+                            count++;
+                        }
+                    }
+
+                    
+
+
+                    if (stop && count < 10) {
+
+                        for (i = high_scorers; i > position; i--) {
+                            scores[i] = scores[i - 1];
+                            names[i] = names[i - 1];
+                        }
+                        names[position] = player;
+                        scores[position] = score;
+
+                        localStorage.setItem("high_scores", scores);
+                        localStorage.setItem("high_scorers", high_scorers);
+                        localStorage.setItem("high_score_names", names);
+                    } 
+                } else {
+
+                    for (var i = 0; i < high_scorers; i++) {
+                        if (!stop && Number(scores[i]) <= Number(score)) {
+                            position = i;
+                            stop = true;
+                        }
+                    }
+
+                    high_scorers++;
+
+                    for (i = high_scorers; i > position; i--) {
+                        scores[i] = scores[i - 1];
+                        names[i] = names[i - 1];
+                    }
+                    names[position] = player;
+                    scores[position] = score;
+
+                    localStorage.setItem("high_scores", scores);
+                    localStorage.setItem("high_scorers", high_scorers);
+                    localStorage.setItem("high_score_names", names);
+
+                }
+
+            } catch (err) {
+                var scores = new Array(10);
+                var names = new Array(10);
+                scores[0] = score;
+                names[0] = player;
+                localStorage.setItem("high_scores", scores);
+                localStorage.setItem("high_score_names", names);
+                localStorage.setItem("high_scorers", 1);
+            }
+        }
+
+        
+       
+
+    </script>
+</body>
+
+   
+</html>
